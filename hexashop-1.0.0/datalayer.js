@@ -188,6 +188,7 @@ function handleValueChange(componentKey, selectorOrExpr, pageConfig) {
 
 
 function getCurrentPageKey() {
+  console.log('fired inside getCurrentPageKey');
   const currentPath = window.location.pathname;
   const currentHash = window.location.hash || "";
   for (const pageKey in config) {
@@ -208,6 +209,7 @@ function scanAndTriggerUnified() {
   console.log('fired scanAndTriggerUnified');
   let matchedByComponent = false;
 console.log('fired scanAndTriggerUnified config:', config)
+/*
   for (const key in config) {
       console.log('fired scanAndTriggerUnified inside for');
     const conf = config[key];
@@ -255,8 +257,10 @@ console.log('fired scanAndTriggerUnified config:', config)
       setupClickHandlers(key, conf);
     }
   }
-
+*/
+console.log('fired above matchedbycomponent');
   if (!matchedByComponent) {
+    console.log('fired inside matchedbycomponent');
     const currentPageKey = getCurrentPageKey();
     const conf = config[currentPageKey];
     if (conf) {
