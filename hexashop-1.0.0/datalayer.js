@@ -1,5 +1,11 @@
-import config from './DataLayer_configFile.json' assert { type: "json" };
-
+//import config from './DataLayer_configFile.json' assert { type: "json" };
+// script.js
+fetch("./DataLayer_configFile.json")
+  .then(res => res.json())
+  .then(data => {
+    console.log("JSON Data:", data);
+  })
+  .catch(err => console.error(err));
 
 window.adobeDataLayer = window.adobeDataLayer || [];
 
