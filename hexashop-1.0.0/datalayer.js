@@ -4,7 +4,7 @@ const config ={};
 fetch("./DataLayer_configFile.json")
   .then(res => res.json())
   .then(config => {
-    console.log("JSON Data:", config);
+    console.log("JSON Data1:", config);
   })
   .catch(err => console.error(err));
 
@@ -117,6 +117,7 @@ function handleEvent(eventType, key, conf, context = {}) {
 
 
 function handlePageLoad(key, conf, context = {}, force = false) {
+  console.log('inside handlePageLoad Method');
   if (!conf?.pageload) return;
   const fireKey = key + ":pageload";
   if (!force && firedPageLoads.has(fireKey)) return;
@@ -208,10 +209,12 @@ function scanAndTriggerUnified() {
   for (const key in config) {
       console.log('fired scanAndTriggerUnified inside for');
     const conf = config[key];
+     console.log('fired scanAndTriggerUnified inside for conf', conf);
     const selectorOrExpr = conf.componentSelector;
     let visible = false;
-
+ console.log('fired scanAndTriggerUnified inside for selectorOrexpr', selectorOrExpr);
     if (selectorOrExpr) {
+      console.log('fired scanAndTriggerUnified inside IFF');
       let result = null;
       try {
         if (
