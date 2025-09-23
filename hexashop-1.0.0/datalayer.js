@@ -1,5 +1,6 @@
 //import config from './DataLayer_configFile.json' assert { type: "json" };
 // script.js
+const config;
 fetch("./DataLayer_configFile.json")
   .then(res => res.json())
   .then(config => {
