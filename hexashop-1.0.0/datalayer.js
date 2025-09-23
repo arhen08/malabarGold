@@ -5,7 +5,7 @@ fetch("./DataLayer_configFile.json")
   .then(res => res.json())
   .then(data => {
     config = data;   // ✅ update global config
-    console.log("JSON Data5:", config);
+    console.log("JSON Data51:", config);
   
   })
   .catch(err => console.error(err));
