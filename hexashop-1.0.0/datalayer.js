@@ -5,7 +5,7 @@ fetch("./DataLayer_configFile.json")
   .then(res => res.json())
   .then(data => {
     config = data;   // ✅ update global config
-    console.log("JSON Data4:", config);
+    console.log("JSON Data5:", config);
   
   })
   .catch(err => console.error(err));
@@ -192,11 +192,14 @@ function getCurrentPageKey() {
   const currentPath = window.location.pathname;
   const currentHash = window.location.hash || "";
   for (const pageKey in config) {
+    console.log('fired getCurrentPageKey :pageKey',pageKey);
     const pageConfig = config[pageKey];
+     console.log('fired getCurrentPageKey :pageConfig',pageConfig);
     const configUrl = (pageConfig.url || "");
     const configHash = pageConfig.hash || "";
     const urlMatches = currentPath === configUrl;
     const hashMatches = !configHash || currentHash === configHash;
+    console.log('fired getCurrentPageKey :urlMatches',urlMatches);
     if (urlMatches && hashMatches) {
       return pageKey;
     }
@@ -262,6 +265,7 @@ console.log('fired above matchedbycomponent');
   if (!matchedByComponent) {
     console.log('fired inside matchedbycomponent');
     const currentPageKey = getCurrentPageKey();
+    
     const conf = config[currentPageKey];
     if (conf) {
       handlePageLoad(currentPageKey, conf);
