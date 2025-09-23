@@ -2,8 +2,8 @@
 // script.js
 fetch("./DataLayer_configFile.json")
   .then(res => res.json())
-  .then(data => {
-    console.log("JSON Data:", data);
+  .then(config => {
+    console.log("JSON Data:", config);
   })
   .catch(err => console.error(err));
 
