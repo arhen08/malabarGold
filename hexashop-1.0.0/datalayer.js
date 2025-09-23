@@ -199,9 +199,11 @@ function getCurrentPageKey() {
 
 
 function scanAndTriggerUnified() {
+  console.log('fired scanAndTriggerUnified');
   let matchedByComponent = false;
 
   for (const key in config) {
+      console.log('fired scanAndTriggerUnified inside for');
     const conf = config[key];
     const selectorOrExpr = conf.componentSelector;
     let visible = false;
@@ -258,12 +260,15 @@ function scanAndTriggerUnified() {
 
 
 function onReady() {
+   console.log('inside onReady');
   scanAndTriggerUnified();
   setInterval(scanAndTriggerUnified, 1000);
 }
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', onReady);
+  console.log('fired onReady');
 } else {
+   console.log('fired onReady else');
   onReady();
 }
