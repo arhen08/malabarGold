@@ -3,8 +3,10 @@
 const config ={};
 fetch("./DataLayer_configFile.json")
   .then(res => res.json())
-  .then(config => {
-    console.log("JSON Data2:", config);
+  .then(data => {
+    config = data;   // ✅ update global config
+    console.log("JSON Data3:", config);
+    onReady();       // ✅ kick off processing AFTER config is loaded
   })
   .catch(err => console.error(err));
 
