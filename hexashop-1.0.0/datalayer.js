@@ -1,4 +1,4 @@
-import config from './DataLayer_configFile.json';
+import config from './DataLayer_configFile.json' assert { type: "json" };
 
 
 window.adobeDataLayer = window.adobeDataLayer || [];
