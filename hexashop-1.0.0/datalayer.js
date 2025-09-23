@@ -1,4 +1,4 @@
-import config from './DataLayer_configFile.json';
+import config from './hexashop-1.0.0/DataLayer_configFile.json';
 
 
 window.adobeDataLayer = window.adobeDataLayer || [];
