@@ -1,12 +1,12 @@
 //import config from './DataLayer_configFile.json' assert { type: "json" };
 // script.js
-const config ={};
+let config ={};
 fetch("./DataLayer_configFile.json")
   .then(res => res.json())
   .then(data => {
     config = data;   // ✅ update global config
-    console.log("JSON Data3:", config);
-    onReady();       // ✅ kick off processing AFTER config is loaded
+    console.log("JSON Data4:", config);
+  
   })
   .catch(err => console.error(err));
 
