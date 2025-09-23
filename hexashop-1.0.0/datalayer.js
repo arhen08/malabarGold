@@ -88,10 +88,12 @@ function buildData(obj, context = {}) {
 
 
 function handleEvent(eventType, key, conf, context = {}) {
+  console.log('fired inside handleevent')
   const source = typeof conf?.event === 'object' ? conf.event : conf;
   const page = buildData(source.page || {}, context);
   const user = buildData(source.user || {}, context);
   const product = buildData(source.product || {}, context);
+  console.log('fired inside handleevent:page', page);
 
   if (!product.productInfo) product.productInfo = {};
   if (!product.productInfo.productDetails && source.product?.productInfo) {
@@ -108,6 +110,7 @@ function handleEvent(eventType, key, conf, context = {}) {
     user,
     product,
   };
+  console.log('fired inside handleevent:payload', payload);
   window.adobeDataLayer.push(payload);
   console.log(`[DATALAYER] ${eventType} for ${key}:`, payload);
 }
