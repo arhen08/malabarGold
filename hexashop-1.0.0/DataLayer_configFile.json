@@ -1,0 +1,33 @@
+{
+  "All Pages": {
+    "url": "",
+    "hash": "",
+    "componentSelector": "",
+    "pageload": {
+      "page": {
+        "pageInfo": {
+          "pageName": "document.title",
+          "pageTitle": "document.title",
+          "siteSection": "window.location.pathname.split('/')[3]",
+          "platform": "navigator.userAgent.toLowerCase().includes('wv') ? 'App-WebView' : 'Web'"
+        }
+      },
+      "event": "page_load",
+      "interactionType": "pageload"
+    },
+    "click": [
+      {
+        "btn": "#explore > div > div > div:nth-child(1) > div > div.main-border-button > a",
+        "page": {
+          "pageInfo": {
+            "pageName": "document.title",
+            "siteSection": "window.location.pathname.split('/')[3]",
+            "platform": "navigator.userAgent.toLowerCase().includes('wv') ? 'App-WebView' : 'Web'"
+          }
+        },
+        "event": "click",
+        "interactionType": "click"
+      }
+    ]
+  }
+}
