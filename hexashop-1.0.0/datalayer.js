@@ -4,7 +4,7 @@ const config ={};
 fetch("./DataLayer_configFile.json")
   .then(res => res.json())
   .then(config => {
-    console.log("JSON Data1:", config);
+    console.log("JSON Data2:", config);
   })
   .catch(err => console.error(err));
 
@@ -205,7 +205,7 @@ function getCurrentPageKey() {
 function scanAndTriggerUnified() {
   console.log('fired scanAndTriggerUnified');
   let matchedByComponent = false;
-
+console.log('fired scanAndTriggerUnified config:', config)
   for (const key in config) {
       console.log('fired scanAndTriggerUnified inside for');
     const conf = config[key];
