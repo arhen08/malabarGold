@@ -44,7 +44,7 @@
         }
       },
       "user": {
-        "customerID": "URL(window.location.href).searchParams.get('userId')"
+        "customerID": "new URL(window.location.href).searchParams.get('userId')"
       },
       "event": "page_load",
       "interactionType": "pageload"
