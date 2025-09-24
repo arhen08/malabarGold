@@ -14,12 +14,7 @@
       },
       "event": "page_load",
       "interactionType": "pageload"
-    }
-  },
-  "All Pages": {
-    "url": "/malabarGold/hexashop-1.0.0/index.html",
-    "hash": "",
-    "componentSelector": "",
+    },
     "click": [
       {
         "btn": "#explore > div > div > div:nth-child(1) > div > div.main-border-button > a",
@@ -47,6 +42,9 @@
           "siteSection": "window.location.pathname.split('/')[3]",
           "platform": "navigator.userAgent.toLowerCase().includes('wv') ? 'App-WebView' : 'Web'"
         }
+      },
+      "user": {
+        "customerID": "URL(window.location.href).searchParams.get('userId')"
       },
       "event": "page_load",
       "interactionType": "pageload"
