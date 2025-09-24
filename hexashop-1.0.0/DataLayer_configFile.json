@@ -1,6 +1,6 @@
 {
   "Home Page": {
-    "url": "malabarGold/hexashop-1.0.0/index.html",
+    "url": "/malabarGold/hexashop-1.0.0/index.html",
     "hash": "",
     "componentSelector": "",
     "pageload": {
@@ -17,7 +17,7 @@
     }
   },
   "All Pages": {
-    "url": "malabarGold/hexashop-1.0.0/index.html",
+    "url": "/malabarGold/hexashop-1.0.0/index.html",
     "hash": "",
     "componentSelector": "",
     "click": [
@@ -36,7 +36,7 @@
     ]
   },
   "Product Page": {
-    "url": "malabarGold/hexashop-1.0.0/products.html",
+    "url": "/malabarGold/hexashop-1.0.0/products.html",
     "hash": "",
     "componentSelector": "",
     "pageload": {
