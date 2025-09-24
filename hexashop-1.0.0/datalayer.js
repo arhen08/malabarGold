@@ -90,12 +90,12 @@ function buildData(obj, context = {}) {
 
 
 function handleEvent(eventType, key, conf, context = {}) {
-  console.log('fired inside handleevent')
+//  console.log('fired inside handleevent')
   const source = typeof conf?.event === 'object' ? conf.event : conf;
   const page = buildData(source.page || {}, context);
   const user = buildData(source.user || {}, context);
   const product = buildData(source.product || {}, context);
-  console.log('fired inside handleevent:page', page);
+//  console.log('fired inside handleevent:page', page);
 
   if (!product.productInfo) product.productInfo = {};
   if (!product.productInfo.productDetails && source.product?.productInfo) {
@@ -112,14 +112,14 @@ function handleEvent(eventType, key, conf, context = {}) {
     user,
     product,
   };
-  console.log('fired inside handleevent:payload', payload);
+//  console.log('fired inside handleevent:payload', payload);
   window.adobeDataLayer.push(payload);
-  console.log(`[DATALAYER] ${eventType} for ${key}:`, payload);
+//  console.log(`[DATALAYER] ${eventType} for ${key}:`, payload);
 }
 
 
 function handlePageLoad(key, conf, context = {}, force = false) {
-  console.log('inside handlePageLoad Method');
+//  console.log('inside handlePageLoad Method');
   if (!conf?.pageload) return;
   const fireKey = key + ":pageload";
   if (!force && firedPageLoads.has(fireKey)) return;
@@ -188,18 +188,18 @@ function handleValueChange(componentKey, selectorOrExpr, pageConfig) {
 
 
 function getCurrentPageKey() {
-  console.log('fired inside getCurrentPageKey');
+//  console.log('fired inside getCurrentPageKey');
   const currentPath = window.location.pathname;
   const currentHash = window.location.hash || "";
   for (const pageKey in config) {
-    console.log('fired getCurrentPageKey :pageKey',pageKey);
+ //   console.log('fired getCurrentPageKey :pageKey',pageKey);
     const pageConfig = config[pageKey];
-     console.log('fired getCurrentPageKey :pageConfig',pageConfig);
+  //   console.log('fired getCurrentPageKey :pageConfig',pageConfig);
     const configUrl = (pageConfig.url || "");
     const configHash = pageConfig.hash || "";
     const urlMatches = currentPath === configUrl;
     const hashMatches = !configHash || currentHash === configHash;
-    console.log('fired getCurrentPageKey :urlMatches',urlMatches);
+  //  console.log('fired getCurrentPageKey :urlMatches',urlMatches);
     if (urlMatches && hashMatches) {
       return pageKey;
     }
@@ -209,9 +209,9 @@ function getCurrentPageKey() {
 
 
 function scanAndTriggerUnified() {
-  console.log('fired scanAndTriggerUnified');
+//  console.log('fired scanAndTriggerUnified');
   let matchedByComponent = false;
-console.log('fired scanAndTriggerUnified config:', config)
+//console.log('fired scanAndTriggerUnified config:', config)
 /*
   for (const key in config) {
       console.log('fired scanAndTriggerUnified inside for');
@@ -261,9 +261,9 @@ console.log('fired scanAndTriggerUnified config:', config)
     }
   }
 */
-console.log('fired above matchedbycomponent');
+//console.log('fired above matchedbycomponent');
   if (!matchedByComponent) {
-    console.log('fired inside matchedbycomponent');
+  //  console.log('fired inside matchedbycomponent');
     const currentPageKey = getCurrentPageKey();
     
     const conf = config[currentPageKey];
@@ -276,15 +276,15 @@ console.log('fired above matchedbycomponent');
 
 
 function onReady() {
-   console.log('inside onReady');
+//   console.log('inside onReady');
   scanAndTriggerUnified();
   setInterval(scanAndTriggerUnified, 1000);
 }
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', onReady);
-  console.log('fired onReady');
+//  console.log('fired onReady');
 } else {
-   console.log('fired onReady else');
+//   console.log('fired onReady else');
   onReady();
 }
